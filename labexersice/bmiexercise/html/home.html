@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>E-portfolio</title>
+    <link rel="stylesheet" href="../../bmiexercise/css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="upsi">
+      <img src="../image/sol1.png" alt="" width="200" height="200">
+    </div>
+    <div class="title">Body Mask Index Indicator</div>
+    <div class=" line "></div><br><br>
+
+<div class="bmi">
+    Weight(kg) <br><input type="text" name="weight" id="weight"><br>
+    Height(m) <br><input type="text" name="height" id="height"><br>
+    <br><button id="button" onclick="calculatebmi()">Calculate</button><br><br><br>
+    <p id="displaybmi"></p><br><br>
+    <p id="image"></p>
+</div>
+
+<script>
+    function calculatebmi(){
+        var weight= document.getElementById("weight").value;
+        var height= document.getElementById("height").value;
+
+        //Underweight Image.
+        var underweight= document.createElement("IMG");
+        underweight.setAttribute("src","../image/sol2.jpg");
+        underweight.setAttribute("width","100%");
+        underweight.setAttribute("height","100%");
+
+        //Normalweight Image.
+        var normalweight= document.createElement("IMG");
+        normalweight.setAttribute("src","../image/sol3.jpeg");
+        normalweight.setAttribute("width","100%");
+        normalweight.setAttribute("height","100%");
+
+        //Overweight Image.
+        var overweight= document.createElement("IMG");
+        overweight.setAttribute("src","../image/sol4.jpeg");
+        overweight.setAttribute("width","100%");
+        overweight.setAttribute("height","100%");
+
+        //Obesity Image.
+        var obesity= document.createElement("IMG");
+        obesity.setAttribute("src","../image/sol5.jpg");
+        obesity.setAttribute("width","100%");
+        obesity.setAttribute("height","100%");
+
+        //Extreme Obesity Image.
+        var extreme= document.createElement("IMG");
+        extreme.setAttribute("src","../image/sol6.jpg");
+        extreme.setAttribute("width","100%");
+        extreme.setAttribute("height","100%");
+
+        //calculation bmi
+        var bmi = weight/(height * height);
+
+        if (bmi < 18.5) {
+            document.getElementById("displaybmi").innerHTML = "Your BMI is UNDERWEIGHT: <br>" + bmi.toFixed(2);
+            document.getElementById("image").appendChild(underweight);
+        } 
+        else if ((bmi=>18.5) && (bmi<24.9)){
+            document.getElementById("displaybmi").innerHTML = "Your BMI is NORMAL WEIGHT: <br>" + bmi.toFixed(2);
+            document.getElementById("image").style.justifyContent = "center";
+            document.getElementById("image").appendChild(normalweight);
+        }
+        else if ((bmi=>25) && (bmi<29.9)) {
+            document.getElementById("displaybmi").innerHTML = "Your BMI is OVERWEIGHT: <br>" + bmi.toFixed(2);
+            document.getElementById("image").appendChild(overweight);
+        }
+        else if ((bmi=>30) && (bmi<39.9)) {
+            document.getElementById("displaybmi").innerHTML = "Your BMI is OBESITY: <br>" + bmi.toFixed(2);
+            document.getElementById("image").appendChild(obesity);
+        }
+        else{
+            document.getElementById("displaybmi").innerHTML = "Your BMI is EXTREME OBESITY: <br>" + bmi.toFixed(2);
+            document.getElementById("image").appendChild(extreme);
+        }
+    }
+</script>
+</div>

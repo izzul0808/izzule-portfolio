@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>E-portfolio</title>
+    <link rel="stylesheet" href="../bmiexercise/css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="upsi">
+      <img src="../bmiexercise/image/sol1.png" alt="" width="200" height="200">
+    </div>
+    <div class="title">Multiplication</div>
+    <div class=" line "></div><br><br>
+
+<div class="bmi">
+    Enter a number: <br><input type="text" name="num" id="num"><br>
+    <br><button id="button" onclick="check()">Check</button><br><br><br>
+    Result: <br><input type="text" name="display" id="display"><br>
+    <br><p id="timetable"></p>
+</div>
+
+<script>
+    function check(){
+        //get number
+        var num = document.getElementById("num").value;
+        if (num % 2 == 0) {
+            status = "The inserted number is even number";
+        }
+        else{
+            status = "The inserted number is odd number";
+        }
+        document.getElementById("display").value = status;
+        
+        var result = "";
+        for (i = 1; i <=12 ; i++){
+            result += "<p>" + i + " X " + num + " = " + (i*num) + "</p>";           
+        }
+        document.getElementById("timetable").innerHTML = result;
+
+        }
+</script>
+</div>
