@@ -166,12 +166,20 @@ header.shadow {
 .btn:hover {
   background: var(--hover);
 }
-
 .about-container {
-  display: grid;
+  display: inline-block;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
+}
+.about-img {
+  position: inline-block;
+  align-items: center;
+  place-items: center;
+  justify-content: center;
+}
+.about-img img {
+  width: 80%;
 }
 table{
   width: 100%;
@@ -185,24 +193,10 @@ th, td{
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-.about-img {
-  position: grid;
-  align-items: center;
-  place-items: center;
-  justify-content: center;
-}
-.about-img img {
-  width: 80%;
-  position: relative;
-  align-items: center;
-  place-items: center;
-  justify-content: center;
-}
 .references-img img {
   width: 45%;
   border-radius: 0.5rem;
 }
-
 .about-text p {
   font-size: var(--p-font);
   font-weight: 400;
