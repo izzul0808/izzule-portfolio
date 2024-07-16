@@ -167,19 +167,20 @@ header.shadow {
   background: var(--hover);
 }
 .about-container {
-  display: inline-block;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
 .about-img {
-  position: inline-block;
+  position: relative;
   align-items: center;
   place-items: center;
   justify-content: center;
 }
 .about-img img {
-  width: 80%;
+  width: 75%;
+  border-radius: 0.5rem;
 }
 table{
   width: 100%;
